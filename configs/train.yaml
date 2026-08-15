@@ -1,0 +1,30 @@
+# Default training config for scripts/train.py.
+# Override any field with --set key=value, e.g. --set epochs=50 --set batch_size=16
+
+data_dir: data
+image_size: 320
+bbox_padding: 0.15
+
+model_name: mobilenet_v3_large
+pretrained: true
+freeze_backbone_epochs: 5
+
+epochs: 70
+batch_size: 32
+lr: 0.00005
+head_lr: 0.0007
+weight_decay: 0.01
+label_smoothing: 0.1
+early_stop_patience: 12
+early_stop_metric: val_loss
+
+mixup_alpha: 0.1
+random_erasing_p: 0.15
+
+use_weighted_sampler: true
+
+num_workers: 4
+seed: 42
+device: cpu
+
+output_dir: outputs/run

@@ -1,0 +1,32 @@
+[project]
+name = "snake-classifier"
+version = "0.1.0"
+description = "CPU-trained, mobile-friendly Sri Lankan snake species classifier"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "torch>=2.4",
+    "torchvision>=0.19",
+    "pillow>=10.0",
+    "pyyaml>=6.0",
+    "numpy>=1.26",
+    "scikit-learn>=1.4",
+    "tqdm>=4.66",
+    "requests>=2.34.2",
+]
+
+[project.optional-dependencies]
+export = ["onnx>=1.16", "onnxruntime>=1.18"]
+tflite = ["onnx>=1.16", "onnx2tf>=1.22", "tensorflow-cpu>=2.16", "tf-keras>=2.16", "onnx-graphsurgeon>=0.5", "sng4onnx>=1.0", "onnxsim>=0.4", "psutil>=5.9", "onnxscript>=0.1", "ai-edge-litert>=1.0"]
+aws = ["boto3>=1.34"]
+
+[tool.uv]
+package = false
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu" }]
+torchvision = [{ index = "pytorch-cpu" }]
