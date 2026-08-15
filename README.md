@@ -1,4 +1,4 @@
-# snake-train
+# sri lankan snake clissifier
 
 CPU-trained, mobile-friendly image classifier for Sri Lankan snake species —
 43 classes, MobileNetV3, exported to both TorchScript and TFLite for
